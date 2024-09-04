@@ -1,0 +1,7 @@
+pandas
+numpy
+scikit-learn
+streamlit
+SQLAlchemy
+pytest
+pytest-cov
