@@ -1,6 +1,6 @@
-import pandas as pd
+import pandas as pd # type: ignore
 import numpy as np
-from scipy.stats import zscore
+from scipy.stats import zscore # type: ignore
 
 def remove_outliers(df, column, z_threshold=3):
     z_scores = zscore(df[column].dropna())
