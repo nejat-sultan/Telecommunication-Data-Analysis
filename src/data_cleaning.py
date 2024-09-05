@@ -1,6 +1,6 @@
-import pandas as pd # type: ignore
+import pandas as pd
 import numpy as np
-from scipy.stats import zscore # type: ignore
+from scipy.stats import zscore
 
 def remove_outliers(df, column, z_threshold=3):
     z_scores = zscore(df[column].dropna())
@@ -8,9 +8,10 @@ def remove_outliers(df, column, z_threshold=3):
     return df
 
 def preprocess_data(df):
-    df.fillna(df.mean(), inplace=True)
+    numeric_cols = df.select_dtypes(include=[np.number]).columns
+    df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].mean())
     
-    for column in df.select_dtypes(include=[np.number]).columns:
+    for column in numeric_cols:
         df = remove_outliers(df, column)
     
     return df
