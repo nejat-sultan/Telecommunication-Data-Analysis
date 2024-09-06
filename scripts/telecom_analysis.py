@@ -32,12 +32,15 @@ def perform_eda(df):
 
 def perform_pca(df):
     pca = PCA(n_components=2)
-    df_pca = pca.fit_transform(df.select_dtypes(include=['float64', 'int64']))
+    numeric_df = df.select_dtypes(include=['float64', 'int64']).fillna(0)  # Handle NaNs
+    df_pca = pca.fit_transform(numeric_df)
     return {
         'explained_variance_ratio_': pca.explained_variance_ratio_
     }
 
 def compute_engagement_metrics(df):
+    df = df.copy()  # Avoid changing the original DataFrame
+    df['total_data_volume'] = df['Download (DL)'] + df['Upload (UL)']
     engagement_metrics = {
         'top_10_customers': df.groupby('MSISDN').agg(
             sessions_frequency=('MSISDN', 'count'),
@@ -49,7 +52,9 @@ def compute_engagement_metrics(df):
 
 def run_kmeans_clustering(df, k=3):
     kmeans = KMeans(n_clusters=k)
-    df['cluster'] = kmeans.fit_predict(df[['Session Duration', 'total_data_volume']])
+    df = df.copy()  # Avoid changing the original DataFrame
+    df['total_data_volume'] = df['Download (DL)'] + df['Upload (UL)']
+    df['cluster'] = kmeans.fit_predict(df[['Session Duration', 'total_data_volume']].fillna(0))  # Handle NaNs
     return {
         'cluster_centers_': kmeans.cluster_centers_
     }
