@@ -1,6 +1,6 @@
 import pytest # type: ignore
 import pandas as pd # type: ignore
-from telecom_analysis import (top_10_handsets, top_3_manufacturers, top_5_handsets_per_manufacturer,  # type: ignore
+from scripts.telecom_analysis import (top_10_handsets, top_3_manufacturers, top_5_handsets_per_manufacturer, 
                                aggregate_user_data, handle_missing_values, 
                                perform_eda, perform_pca, compute_engagement_metrics, 
                                run_kmeans_clustering)
