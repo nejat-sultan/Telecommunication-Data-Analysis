@@ -25,6 +25,14 @@ This project is structured to deliver insights into various aspects of telecom u
 - **Bivariate & Correlation Analysis**: Analyzed relationships between application usage and total data consumption. Calculated a correlation matrix to understand interactions between applications like Social Media, Google, YouTube, and Netflix.
 - **Dimensionality Reduction**: Performed Principal Component Analysis (PCA) to reduce data dimensions and interpret key components that influence user satisfaction and behavior.
 
+### User Engagement Analysis:
+- Aggregated metrics per customer ID (MSISDN) and report the top 10 customers per engagement metric.
+- Normalized each engagement metric and applied k-means clustering (k=3) to classify customers into three engagement groups.
+- Computed minimum, maximum, average, and total non-normalized metrics for each cluster. Interpret results visually with accompanying text.
+- Aggregated total traffic per application and derive the top 10 most engaged users per application.
+- Plotted the top 3 most used applications using appropriate charts.
+- Used k-means clustering to group users into k engagement clusters based on the engagement metrics. Determine the optimized value of k using the elbow method and interpret findings.
+
 ## Requirements
 
 Before running the project, make sure you have the following dependencies installed:

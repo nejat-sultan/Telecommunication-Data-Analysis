@@ -31,3 +31,17 @@ This folder contains Jupyter notebooks used to perform a detailed analysis of te
 
 - **Dimensionality Reduction**:
   - **PCA**: Reduced data dimensions to highlight key variables and trends, improving analysis efficiency and interpretability.
+
+
+## Task 2 - User Engagement Analysis
+- **Engagement Metrics**:
+  - Sessions frequency
+  - Duration of the session
+  - Total traffic (download and upload in bytes)
+
+- **Task 2.1**:
+  - **Aggregate Metrics**: Reported top 10 customers per engagement metric.
+  - **Normalize & Cluster**: Normalized metrics, applied k-means clustering (k=3), and analyzed cluster characteristics.
+  - **Traffic Aggregation**: Aggregated user traffic per application and derived the top 10 most engaged users.
+  - **Application Usage**: Plotted the top 3 most used applications.
+  - **Optimal k-value**: Determined the optimal number of clusters using the elbow method and interpreted findings.
