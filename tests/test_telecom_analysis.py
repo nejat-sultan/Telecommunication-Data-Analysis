@@ -10,21 +10,22 @@ from scripts.telecom_analysis import (top_10_handsets, top_3_manufacturers,
 @pytest.fixture
 def sample_data():
     data = {
-        'MSISDN': ['123', '456', '789', '123', '456'],
-        'Handset': ['A', 'B', 'C', 'A', 'B'],
-        'Manufacturer': ['X', 'Y', 'X', 'X', 'Y'],
-        'Social Media': [100, 200, 300, 400, 500],
-        'Google': [50, 60, 70, 80, 90],
-        'Email': [30, 20, 10, 20, 30],
-        'YouTube': [200, 300, 400, 500, 600],
-        'Netflix': [150, 250, 350, 450, 550],
-        'Gaming': [80, 90, 100, 110, 120],
-        'Other': [20, 30, 40, 50, 60],
-        'Session Duration': [10, 15, 20, 25, 30],
-        'Download (DL)': [500, 600, 700, 800, 900],
-        'Upload (UL)': [100, 200, 300, 400, 500]
+        'MSISDN': ['123', '456', '789', '123', '456', '101'],
+        'Handset': ['A', 'B', 'C', 'A', 'B', 'D'],
+        'Manufacturer': ['X', 'Y', 'X', 'X', 'Y', 'Z'],
+        'Social Media': [100, 200, 300, 400, 500, 600],
+        'Google': [50, 60, 70, 80, 90, 100],
+        'Email': [30, 20, 10, 20, 30, 40],
+        'YouTube': [200, 300, 400, 500, 600, 700],
+        'Netflix': [150, 250, 350, 450, 550, 650],
+        'Gaming': [80, 90, 100, 110, 120, 130],
+        'Other': [20, 30, 40, 50, 60, 70],
+        'Session Duration': [10, 15, 20, 25, 30, 35],
+        'Download (DL)': [500, 600, 700, 800, 900, 1000],
+        'Upload (UL)': [100, 200, 300, 400, 500, 600]
     }
     return pd.DataFrame(data)
+
 
 @pytest.fixture
 def sample_data_with_missing_values():

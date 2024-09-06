@@ -21,7 +21,16 @@ def aggregate_user_data(df):
     ).reset_index()
 
 def handle_missing_values(df):
-    return df.fillna(df.mean())
+    numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
+    non_numeric_cols = df.select_dtypes(exclude=['float64', 'int64']).columns
+    
+    df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].mean())
+    
+    for col in non_numeric_cols:
+        df[col] = df[col].fillna(df[col].mode()[0])
+    
+    return df
+
 
 def perform_eda(df):
     result = {
