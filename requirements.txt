@@ -9,4 +9,7 @@ matplotlib
 seaborn
 pytest
 
+Flask
+joblib
+
 
