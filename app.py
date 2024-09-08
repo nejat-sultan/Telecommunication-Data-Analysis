@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler # type: ignore
 
 @st.cache
 def load_data():
-    telecom_data = pd.read_csv('C://Users/nejat/AIM Projects/week2 data/Week2_challenge_data_source(CSV).csv')
+    telecom_data = pd.read_csv('data/Week2_challenge_data_source(CSV).csv')
     return telecom_data
     
 data = load_data()
