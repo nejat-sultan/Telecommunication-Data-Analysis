@@ -33,6 +33,9 @@ This project is structured to deliver insights into various aspects of telecom u
 - Plotted the top 3 most used applications using appropriate charts.
 - Used k-means clustering to group users into k engagement clusters based on the engagement metrics. Determine the optimized value of k using the elbow method and interpret findings.
 
+### User Experience
+### User Satisfaction
+
 ## Requirements
 
 Before running the project, make sure you have the following dependencies installed:
